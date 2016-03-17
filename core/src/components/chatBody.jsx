@@ -7,13 +7,18 @@ import { getChats } from '../actions/index';
 class ChatBody extends Component {
 	constructor(props) {
 		super(props);
-
+	this.getChats = this.getChats.bind(this)
 	}
 
-	componentWillMount() {
+	getChats() {
 		this.props.getChats();
 	}
-
+	
+	componentDidMount() {
+		setInterval(function() {
+			this.getChats()}.bind(this), 1000)
+	}
+	
 	renderChats() {
 		if(this.props.chats) {
 			return (

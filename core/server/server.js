@@ -26,7 +26,6 @@ app.get(/^(?!.*(images))/, function (req, res) {
 });
 
 
-
 app.listen(8000, function() {
 	console.log('listening on port: 8000');
-})
+});
