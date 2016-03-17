@@ -5,12 +5,15 @@ export const POST_CHATS = "POST_CHATS";
 
 const ROOT_URL = 'http://localhost:8000'
 
+const ROOT_URL = window.location.origin;
+
 export function getChats() {
 	const request = axios.get(`${ROOT_URL}/getChats`);
 
 	return {
 		type: GET_CHATS,
 		payload: request
+
 	}
 }
 

@@ -22,8 +22,9 @@ mongoose.connection.once('open', function() {
 });
 
 app.get(/^(?!.*(images))/, function (req, res) {
-	res.sendFile(path.resolve("public/index.html"));
+ 	res.sendFile(path.resolve("public/index.html"));
 });
+
 
 app.listen(8000, function() {
 	console.log('listening on port: 8000');
