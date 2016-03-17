@@ -7,19 +7,24 @@ import { getChats } from '../actions/index';
 class ChatBody extends Component {
 	constructor(props) {
 		super(props);
-
+	this.getChats = this.getChats.bind(this)
 	}
 
-	componentWillMount() {
+	getChats() {
 		this.props.getChats();
 	}
-
+	
+	componentDidMount() {
+		setInterval(function() {
+			this.getChats()}.bind(this), 1000)
+	}
+	
 	renderChats() {
 		if(this.props.chats) {
 			return (
 				this.props.chats.map((chat) => {
 					return (
-						<div key={chat}>{chat}</div>
+						<div key={chat._id}>{chat.message}</div>
 					);
 				})
 			);
@@ -34,7 +39,6 @@ class ChatBody extends Component {
 	render() {
 		return (
 			<div className="chatBody">
-				<div>Hello</div>
 				{this.renderChats()}
 			</div>
 		);
