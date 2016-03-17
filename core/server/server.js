@@ -7,9 +7,10 @@ var express = require('express'),
 var app = express();
 
 app.use(bodyParser.json());
-app.use(cors());
+app.use(cors()); //resolves header
 
 app.use(express.static(path.resolve('public/')));
+
 app.get(/^(?!.*(images))/, function (req, res) {
  	res.sendFile(path.resolve("public/index.html"));
 });
