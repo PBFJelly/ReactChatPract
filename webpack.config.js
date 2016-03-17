@@ -2,7 +2,7 @@ var path = require('path');
 
 
 module.exports = {
-  context: path.resolve('core/src/'),
+  context: path.resolve('core/src/'),  //this is where I want you to start looking
   entry: './index.jsx',
   output: {
     path: path.resolve('public/assets/js'),
