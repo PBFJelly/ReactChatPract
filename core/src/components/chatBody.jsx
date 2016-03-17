@@ -19,7 +19,7 @@ class ChatBody extends Component {
 			return (
 				this.props.chats.map((chat) => {
 					return (
-						<div key={chat}>{chat}</div>
+						<div key={chat._id}>{chat.message}</div>
 					);
 				})
 			);
@@ -34,7 +34,6 @@ class ChatBody extends Component {
 	render() {
 		return (
 			<div className="chatBody">
-				<div>Hello</div>
 				{this.renderChats()}
 			</div>
 		);

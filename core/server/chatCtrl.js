@@ -7,6 +7,7 @@ module.exports = {
 		newChat.timeStamp = new Date();
 		newChat.message = req.body.message;
 		newChat.save(function(err, result) {
+			console.log(result);
 			if (err) res.sendStatus(500);
 			else res.send(result);
 		})

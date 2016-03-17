@@ -4,7 +4,8 @@ export default function(state = [], action = '') {
 
 	switch(action.type) {
 		case(GET_CHATS):
-			return action.payload;
+			console.log('chats retrieved', action.payload.data);
+			return action.payload.data;
 		default:
 			return state;
 	}
